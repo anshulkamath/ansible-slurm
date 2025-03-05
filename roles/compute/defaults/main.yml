@@ -1,0 +1,6 @@
+---
+
+cuda_arch: "{{ ansible_architecture  }}"
+cuda_dist: "{{ (ansible_distribution | lower) + (ansible_distribution_version | replace('.', '')) }}"
+cuda_keyring: "1.1-1"
+cuda_version: "12-8"

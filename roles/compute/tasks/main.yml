@@ -1,0 +1,30 @@
+---
+
+- name: Install cuda-keyring
+  become: true
+  ansible.builtin.apt:
+    deb: https://developer.download.nvidia.com/compute/cuda/repos/{{ cuda_dist }}/{{ cuda_arch }}/cuda-keyring_1.1-1_all.deb
+
+- name: Install cuda-toolkit-{{ cuda_version }}
+  become: true
+  ansible.builtin.apt:
+    name: "cuda-toolkit-{{ cuda_version }}"
+    update_cache: yes
+
+- name: Install nvidia-open
+  become: true
+  ansible.builtin.apt:
+    name: nvidia-open
+
+- name: Install GRES conf
+  become: true
+  ansible.builtin.template:
+    src: "{{ gres_conf_template }}"
+    dest: /etc/slurm/gres.conf
+    mode: '0774'
+    owner: slurm
+    group: slurm
+  vars:
+    node_name: "{{ inventory_hostname }}"
+    num_gpus: "{{ hostvars[inventory_hostname]['num_gpus'] }}"
+  

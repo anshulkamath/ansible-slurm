@@ -1,8 +1,5 @@
----
-
 - hosts: workers
   roles:
-    - roles/slurmd
     - roles/compute
   vars:
     all_nodes: "{{ groups['workers'] + groups['controller'] }}"

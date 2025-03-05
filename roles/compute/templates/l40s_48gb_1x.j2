@@ -1,0 +1,3 @@
+{% for i in range(num_gpus | int) %}
+NodeName={{ node_name }} Name=gpu Type=nvidia File=/dev/nvidia{{ i }}
+{% endfor %}

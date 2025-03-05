@@ -3,3 +3,5 @@
 - hosts: controller
   roles:
     - roles/slurmctld
+  vars:
+    all_nodes: "{{ groups['workers'] + groups['controller'] }}"
