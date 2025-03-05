@@ -1,0 +1,3 @@
+{% for host in nodes %}
+{{ hostvars[host]['private_ip'] }} {{ host }}
+{% endfor %}

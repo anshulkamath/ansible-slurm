@@ -1,0 +1,5 @@
+# constants
+munge_key_path: /etc/munge/munge.key
+
+# handler names
+restart_munge_handler: "Restart munge"

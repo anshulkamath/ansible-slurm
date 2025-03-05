@@ -1,0 +1,14 @@
+---
+
+- name: Configure Slurm worker dependencies
+  become: true
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: "{{ item.type }}"
+    mode: '0774'
+    group: slurm
+    owner: slurm
+    access_time: preserve
+    modification_time: preserve
+  loop: "{{ paths }}"
+  notify: "{{ restart_slurmd_handler }}"

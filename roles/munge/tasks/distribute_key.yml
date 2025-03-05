@@ -1,0 +1,21 @@
+---
+
+- name: Fetch Munge key from controller
+  become: true
+  ansible.builtin.fetch:
+    src: "{{ munge_key_path }}"
+    dest: "/tmp/munge.key"
+    flat: yes
+  delegate_to: "{{ controller }}"
+  run_once: true
+
+- name: Copy Munge key to worker nodes
+  become: true
+  ansible.builtin.copy:
+    src: "/tmp/munge.key"
+    dest: "{{ munge_key_path }}"
+    owner: munge
+    group: munge
+    mode: '0600'
+  when: inventory_hostname in workers
+  notify: "{{ restart_munge_handler }}"

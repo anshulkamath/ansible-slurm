@@ -1,0 +1,24 @@
+---
+
+- name: Install dependencies
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - hostname
+
+- name: Update hostname
+  become: true
+  ansible.builtin.hostname:
+    name: "{{ inventory_hostname }}"
+    use: systemd
+  
+- name: Update /etc/hosts
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/hosts
+    marker: "{{ hosts_marker }}"
+    prepend_newline: true
+    append_newline: true
+    block: "{{ lookup('ansible.builtin.template', 'hosts_template.j2') }}"
+  vars:
+    nodes: "{{ all_nodes }}"

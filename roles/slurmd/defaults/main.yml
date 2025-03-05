@@ -1,0 +1,11 @@
+---
+
+# paths that the slurm user needs access to for the daemon
+paths:
+  - path: /var/spool/slurmd
+    type: directory
+
+  - path: /var/log/slurmd.log
+    type: touch
+
+restart_slurmd_handler: "Restart slurmd"

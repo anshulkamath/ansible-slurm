@@ -1,0 +1,17 @@
+---
+
+- name: Install dependencies
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+    pkg:
+      - slurm-wlm
+
+- name: Write Slurm configuration file
+  become: true
+  ansible.builtin.copy:
+    src: slurm.conf
+    dest: /etc/slurm/slurm.conf
+    mode: '0774'
+    owner: slurm
+    group: slurm

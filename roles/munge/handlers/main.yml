@@ -1,0 +1,11 @@
+---
+
+- name: "{{ restart_munge_handler }}"
+  become: true
+  systemd_service:
+    name: munge
+    enabled: true
+    state: restarted
+  delegate_to: "{{ item }}"
+  with_items: "{{ all_nodes }}"
+  run_once: true

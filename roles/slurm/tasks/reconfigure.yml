@@ -1,0 +1,5 @@
+---
+
+- name: Reconfigure slurm
+  become: true
+  ansible.builtin.shell: scontrol reconfigure

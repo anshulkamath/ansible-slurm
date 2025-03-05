@@ -1,0 +1,14 @@
+---
+
+- name: Install munge dependencies
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - munge
+      - libmunge2
+      - libmunge-dev
+
+- import_tasks: generate_key.yml
+  when: inventory_hostname == controller
+
+- import_tasks: distribute_key.yml

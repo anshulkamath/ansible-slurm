@@ -1,0 +1,29 @@
+---
+
+- name: Ensure /etc/munge directory exists on controller
+  become: true
+  ansible.builtin.file:
+    path: "/etc/munge"
+    state: directory
+    owner: munge
+    group: munge
+    mode: '0700'
+  when: inventory_hostname == controller
+
+- name: Generate Munge key if not exists
+  become: true
+  ansible.builtin.command: /usr/sbin/mungekey --verbose
+  args:
+    creates: "{{ munge_key_path }}"
+  when: inventory_hostname == controller
+  notify: "{{ restart_munge_handler }}"
+
+- name: Set proper permissions for Munge key
+  become: true
+  ansible.builtin.file:
+    path: "{{ munge_key_path }}"
+    owner: munge
+    group: munge
+    mode: '0600'
+  when: inventory_hostname == controller
+  notify: "{{ restart_munge_handler }}"

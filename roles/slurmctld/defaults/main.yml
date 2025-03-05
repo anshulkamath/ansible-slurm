@@ -1,0 +1,11 @@
+---
+
+# paths that the slurm user needs access to for the controller
+paths:
+  - path: /var/spool/slurmctld
+    type: directory
+
+  - path: /var/log/slurmctld.log
+    type: touch
+
+restart_slurmctld_handler: "Restart slurmctld"

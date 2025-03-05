@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  roles:
+    - roles/host
+    - roles/munge
+  vars:
+    controller: "{{ groups['controller'][0] }}"
+    workers: "{{ groups['workers'] }}"
+    all_nodes: "{{ groups['controller'] + groups['workers'] }}"
