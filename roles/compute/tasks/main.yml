@@ -16,6 +16,11 @@
   ansible.builtin.apt:
     name: nvidia-open
 
+- name: Load NVIDIA device nodes
+  ansible.builtin.command: nvidia-smi
+  args:
+    creates: /dev/nvidia0
+
 - name: Install GRES conf
   become: true
   ansible.builtin.template:
@@ -27,4 +32,3 @@
   vars:
     node_name: "{{ inventory_hostname }}"
     num_gpus: "{{ hostvars[inventory_hostname]['num_gpus'] }}"
-  
