@@ -7,11 +7,11 @@
       - nfs-common
 
 - name: Create mount point
-  become: true
+  become_user: "{{ nfs_user }}"
   ansible.builtin.file:
     name: "{{ client_mount }}"
-    owner: slurm
-    group: slurm
+    owner: "{{ nfs_user }}"
+    group: "{{ nfs_user }}" 
     mode: '774'
     recurse: true
 

@@ -10,3 +10,4 @@
     mount_point: "/mnt/{{ cluster_name }}"
     server_mount: "/mnt/{{cluster_name}}"
     workers: "{{ groups['workers'] }}"
+    nfs_user: "ubuntu"

@@ -13,3 +13,4 @@
     fsnode: "{{ groups['controller'][0] }}"
     server_mount: "/mnt/{{cluster_name}}"
     client_mount: "/mnt/slurm"
+    nfs_user: "ubuntu"

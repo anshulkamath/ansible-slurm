@@ -10,8 +10,8 @@
   become: true
   ansible.builtin.file:
     path: "{{ server_mount }}"
-    owner: slurm
-    group: slurm
+    owner: "{{ nfs_user }}"
+    group:  "{{ nfs_user }}"
     mode: '774'
     recurse: true
 
