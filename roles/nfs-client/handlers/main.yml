@@ -1,0 +1,5 @@
+---
+
+- name: "{{ mount_handler }}"
+  become: true
+  ansible.builtin.command: mount -a

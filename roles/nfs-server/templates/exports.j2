@@ -1,0 +1,1 @@
+{{ mount_point }}{% for node in workers %} {{node}}(rw,sync,no_subtree_check){% endfor %}

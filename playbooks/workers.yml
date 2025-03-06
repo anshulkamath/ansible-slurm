@@ -4,7 +4,12 @@
   roles:
     - roles/slurmd
     - roles/compute
+    - roles/nfs-client
   vars:
     all_nodes: "{{ groups['workers'] + groups['controller'] }}"
     gres_conf_template: "l40s_48gb_1x.j2"
     hosts_to_gpu_counts: "{{ hostvars['workers'] | dict2items | map('extract', 'gpu_count')  }}"
+    cluster_name: "anshul_test_cluster"
+    fsnode: "{{ groups['controller'][0] }}"
+    server_mount: "/mnt/{{cluster_name}}"
+    client_mount: "/mnt/slurm"

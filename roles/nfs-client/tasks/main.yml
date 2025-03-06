@@ -1,0 +1,26 @@
+---
+
+- name: Install dependencies
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - nfs-common
+
+- name: Create mount point
+  become: true
+  ansible.builtin.file:
+    name: "{{ client_mount }}"
+    owner: slurm
+    group: slurm
+    mode: '774'
+    recurse: true
+
+- name: Update fs table
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/fstab
+    marker: "{{ fstab_marker }}"
+    prepend_newline: true
+    append_newline: true
+    block: "{{ fsnode }}:{{ server_mount }} {{ client_mount }} nfs defaults,nofail, 0 0"
+  notify: "{{ mount_handler }}"

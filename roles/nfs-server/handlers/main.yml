@@ -1,0 +1,13 @@
+---
+
+- name: Export Filesystem
+  listen: reload nfs server
+  become: true
+  ansible.builtin.command: exportfs -a
+
+- name: Restart NFS server
+  listen: reload nfs server
+  become: true
+  ansible.builtin.systemd_service:
+    name: nfs-kernel-server
+    state: restarted

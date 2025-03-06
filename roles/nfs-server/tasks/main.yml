@@ -1,0 +1,26 @@
+---
+
+- name: Install dependencies
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - nfs-kernel-server
+
+- name: Create mount point
+  become: true
+  ansible.builtin.file:
+    path: "{{ server_mount }}"
+    owner: slurm
+    group: slurm
+    mode: '774'
+    recurse: true
+
+- name: Define export file
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/exports
+    marker: "{{ exports_marker }}"
+    prepend_newline: true
+    append_newline: true
+    block: "{{ lookup('ansible.builtin.template', 'exports.j2') }}"
+  notify: reload nfs server
