@@ -6,8 +6,7 @@
     - roles/nfs-server
   vars:
     all_nodes: "{{ groups['workers'] + groups['controller'] }}"
-    cluster_name: "anshul_test_cluster"
-    mount_point: "/mnt/{{ cluster_name }}"
-    server_mount: "/mnt/{{cluster_name}}"
     workers: "{{ groups['workers'] }}"
+    cluster_name: "anshul_test_cluster"
     nfs_user: "ubuntu"
+    server_mount: "/mnt/{{nfs_user}}"
