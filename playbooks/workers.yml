@@ -10,7 +10,8 @@
     gres_conf_template: "l40s_48gb_1x.j2"
     hosts_to_gpu_counts: "{{ hostvars['workers'] | dict2items | map('extract', 'gpu_count')  }}"
     cluster_name: "anshul_test_cluster"
-    fsnode: "{{ groups['controller'][0] }}"
     nfs_user: "ubuntu"
+    nfs_server: "{{ groups['controller'][0] }}"
     server_mount: "/mnt/{{nfs_user}}"
     client_mount: "/mnt/{{nfs_user}}"
+    with_gpu: true

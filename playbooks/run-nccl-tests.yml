@@ -1,0 +1,32 @@
+---
+
+- name: Run NCCL tests
+  hosts: controller
+  tasks:
+
+    - set_fact: deploy_path=/home/ubuntu/nccl-tests.sbatch
+
+    - name: Push sbatch script
+      ansible.builtin.copy:
+        src: ../scripts/nccl-tests.sbatch
+        dest: "{{ deploy_path }}"
+        owner: ubuntu
+        group: ubuntu
+        mode: '777'
+
+    - name: Run sbatch command
+      become: true
+      become_user: ubuntu
+      ansible.builtin.command: "sbatch -W {{ deploy_path }}"
+      args:
+        creates: "/mnt/ubuntu/nccl-output.out"
+
+    - name: Copy results back
+      ansible.builtin.copy:
+        src: "/mnt/ubuntu/nccl-{{ item }}.out"
+        dest: output
+        remote_src: true
+      check_mode: true
+      loop:
+        - output
+        - errors

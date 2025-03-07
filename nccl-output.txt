@@ -1,0 +1,263 @@
+make -C src build BUILDDIR=/mnt/ubuntu/nccl-tests/build
+make[1]: Entering directory '/mnt/ubuntu/nccl-tests/src'
+make[1]: Leaving directory '/mnt/ubuntu/nccl-tests/src'
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31448 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32407 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float     sum       0    15.35  2185.78  2185.78      0     0.09  385683.13  385683.13      0
+    33554432       8388608     float     sum       0    15.42  2175.99  2175.99      0     0.08  411710.82  411710.82      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 193934 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 206943 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31478 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32445 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float     sum      -1    17.84  1881.09  1881.09      0     0.73  46186.42  46186.42    N/A
+    33554432       8388608     float     sum      -1    17.95  1868.93  1868.93      0     0.72  46762.50  46762.50    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 24033.8 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 24315.7 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31508 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32483 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float              -1    15.46    0.00    0.00      0     0.05    0.00    0.00      0
+    33554432       8388608     float              -1    15.40    0.00    0.00      0     0.06    0.00    0.00      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31538 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32521 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float    none       0    17.89  1875.26    0.00      0     0.71  47389.92    0.00      0
+    33554432       8388608     float    none       0    17.95  1868.82    0.00      0     0.75  44561.00    0.00      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31568 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32561 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float    none      -1    17.89  1875.99    0.00      0     0.73  45683.37    0.00    N/A
+    33554432       8388608     float    none      -1    17.92  1872.84    0.00      0     0.71  47057.61    0.00    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31598 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32599 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float     sum      -1    15.35  2186.50    0.00      0     0.08  422068.33    0.00      0
+    33554432       8388608     float     sum      -1    15.38  2182.22    0.00      0     0.08  414252.25    0.00      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31628 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  32637 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float    none      -1    15.39  2179.96    0.00      0     0.08  438620.03    0.00      0
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float    none      -1    15.42  2176.70    0.00      0     0.08  438620.03    0.00      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  32675 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  31658 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float    none       0    17.97  1867.57    0.00      0     0.74  45069.75    0.00      0
+    33554432       8388608     float    none       0    17.89  1875.84    0.00      0     0.73  45996.48    0.00      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  32715 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  31688 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float    none       0    15.44  2173.17  2173.17      0     0.08  401849.49  401849.49      0
+    33554432       8388608     float    none       0    15.34  2187.35  2187.35      0     0.08  397093.87  397093.87      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 202011 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 199641 
+#
+
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+# nThread 1 nGpus 1 minBytes 33554432 maxBytes 33554432 step: 1048576(bytes) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  32753 on  worker-00 device  0 [0002:00:01] NVIDIA L40S
+#  Rank  0 Group  0 Pid  31718 on  worker-01 device  0 [0002:00:01] NVIDIA L40S
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+    33554432       8388608     float     sum      -1    15.38  2182.29    0.00      0     0.08  427444.99    0.00      0
+    33554432       8388608     float     sum      -1    15.32  2189.77    0.00      0     0.08  424739.65    0.00      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+

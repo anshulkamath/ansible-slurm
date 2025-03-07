@@ -11,15 +11,20 @@
     name: "cuda-toolkit-{{ cuda_version }}"
     update_cache: yes
 
-- name: Install nvidia-open
+- name: Install Nvidia dependencies
   become: true
   ansible.builtin.apt:
-    name: nvidia-open
+    name:
+      - nvidia-open
+      - libnccl2
+      - libnccl-dev
+  when: "{{ with_gpu }}"
 
 - name: Load NVIDIA device nodes
   ansible.builtin.command: nvidia-smi
   args:
     creates: /dev/nvidia0
+  when: "{{ with_gpu }}"
 
 - name: Install GRES conf
   become: true
@@ -32,3 +37,4 @@
   vars:
     node_name: "{{ inventory_hostname }}"
     num_gpus: "{{ hostvars[inventory_hostname]['num_gpus'] }}"
+  when: "{{ with_gpu }}"
