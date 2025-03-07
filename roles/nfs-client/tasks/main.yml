@@ -6,21 +6,13 @@
     pkg:
       - nfs-common
 
-- name: Create mount point
+- name: Create NFS mount
   become: true
-  ansible.builtin.file:
-    name: "{{ client_mount }}"
-    owner: "{{ nfs_user }}"
-    group: "{{ nfs_user }}" 
-    mode: '774'
-    recurse: true
+  ansible.posix.mount:
+    src: "{{ nfs_server }}:{{ server_mount }}"
+    path: "{{ client_mount }}"
+    state: mounted
+    fstype: nfs
+    opts: defaults,rw,nofail
+    boot: false
 
-- name: Update fs table
-  become: true
-  ansible.builtin.blockinfile:
-    path: /etc/fstab
-    marker: "{{ fstab_marker }}"
-    prepend_newline: true
-    append_newline: true
-    block: "{{ fsnode }}:{{ server_mount }} {{ client_mount }} nfs defaults,nofail, 0 0"
-  notify: "{{ mount_handler }}"
